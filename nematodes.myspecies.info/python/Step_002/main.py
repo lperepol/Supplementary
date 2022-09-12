@@ -11,9 +11,9 @@ def read_csv(fn):
     return df
 
 def rename():
-    path = "/0program/nemtode/general/Supplimenatay_Key_Images/nematodes.myspecies.info/Images"
+    return
+    path = "X:/0program/nemtode/general/Supplimenatay_Key_Images/nematodes.myspecies.info/Images"
     count = 1
-
     for root, dirs, files in os.walk(path):
         for d in dirs :
             dir =  d
@@ -33,7 +33,7 @@ def rename():
 
 def fixFileNames(df):
     df['ext'] = ''
-    dir = "/0program/nemtode/general/Supplimenatay_Key_Images/nematodes.myspecies.info"
+    path = "X:/0program/nemtode/general/Supplimenatay_Key_Images/nematodes.myspecies.info/Images"
     for index, row in df.iterrows():
         FileName = str(row['FileName']).strip()
         old_name = dir + FileName
@@ -46,8 +46,6 @@ def fixFileNames(df):
     return df
 
 def main():
-    rename()
-    return
     fn = "../../ImagesFixed.csv"
     df = read_csv(fn)
     df = fixFileNames(df)
